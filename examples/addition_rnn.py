@@ -28,8 +28,8 @@ Five digits reversed:
 '''  # noqa
 
 from __future__ import print_function
-from keras.models import Sequential
-from keras import layers
+from tensorflow.keras.models import Sequential
+from tensorflow.keras import layers
 import numpy as np
 from six.moves import range
 
@@ -185,6 +185,12 @@ model.summary()
 
 # Train the model each generation and show predictions against the validation
 # dataset.
+
+x_train=x_train.astype(np.float32)
+y_train=y_train.astype(np.float32)
+x_val=x_val.astype(np.float32)
+y_val=y_val.astype(np.float32)
+
 for iteration in range(1, 200):
     print()
     print('-' * 50)
